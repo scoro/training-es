@@ -1,8 +1,8 @@
-FROM docker.elastic.co/elasticsearch/elasticsearch:8.13.3
+FROM docker.elastic.co/elasticsearch/elasticsearch:8.6.1
 
 RUN bin/elasticsearch-plugin install analysis-stempel
 RUN bin/elasticsearch-plugin install analysis-icu
-RUN bin/elasticsearch-plugin install pl.allegro.tech.elasticsearch.plugin:elasticsearch-analysis-morfologik:8.13.3
+RUN bin/elasticsearch-plugin install pl.allegro.tech.elasticsearch.plugin:elasticsearch-analysis-morfologik:8.6.1
 RUN bin/elasticsearch-plugin install --batch ingest-attachment
 
 RUN mkdir /usr/share/elasticsearch/backup
