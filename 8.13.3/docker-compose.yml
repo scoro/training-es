@@ -5,7 +5,7 @@ services:
     build:
       dockerfile: elasticsearch-with-plugins
       context: .
-    image: training-es:9.2.1
+    image: training-es:8.13.3
     container_name: es01
     environment:
       - node.name=es01
@@ -16,10 +16,6 @@ services:
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
       - path.repo=/usr/share/elasticsearch/backup
       - xpack.security.enabled=false
-      - http.cors.enabled='true'
-      - http.cors.allow-origin="*"
-      - http.cors.allow-headers=X-Requested-With,Content-Type,Content-Length
-      - http.cors.allow-methods=OPTIONS,HEAD,GET,POST,PUT,DELETE
     ulimits:
       memlock:
         soft: -1
@@ -32,7 +28,7 @@ services:
     networks:
       - esnet
   elasticsearch2:
-    image: training-es:9.2.1
+    image: training-es:8.13.3
     container_name: es02
     environment:
       - node.name=es02
@@ -43,10 +39,6 @@ services:
       - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
       - path.repo=/usr/share/elasticsearch/backup
       - xpack.security.enabled=false
-      - http.cors.enabled='true'
-      - http.cors.allow-origin="*"
-      - http.cors.allow-headers=X-Requested-With,Content-Type,Content-Length
-      - http.cors.allow-methods=OPTIONS,HEAD,GET,POST,PUT,DELETE
     ulimits:
       memlock:
         soft: -1
@@ -57,7 +49,7 @@ services:
     networks:
       - esnet
   kibana:
-    image: docker.elastic.co/kibana/kibana:9.2.1
+    image: docker.elastic.co/kibana/kibana:8.13.3
     container_name: kibana
     networks:
       - esnet

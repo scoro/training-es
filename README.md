@@ -9,7 +9,7 @@ Dockerized two-nodes Elasticsearch cluster with Kibana and the following plugins
 ## Usage
 1. Build custom Elasticsearch image (with listed plugins installed):
    ```
-   docker build -f elasticsearch-with-plugins -t training-es:8.13.3 .
+   docker build -f elasticsearch-with-plugins -t training-es:9.2.1 .
    ```
 
 2. Setup docker-machine by increasing limits on mmap counts corresponding to https://elastic.co/guide/en/elasticsearch/reference/current/vm-max-map-count.html
